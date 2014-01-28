@@ -1,30 +1,115 @@
-<h1>Listing subjects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <tr>
-        <td><%= subject.name %></td>
-        <td><%= subject.description %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row clearfix">
+  <h3 class="text-center text-success">
+       Lista de materias
+</h3>
+    <div class="col-md-20 column">
+                <div class = "navbar navbar-inverse navbar-static-top">
+                        <div class = "container">
+                               
+                                <a href = "#" class = "navbar-brand">Materias</a>
+                    
+                                <div class = "collapse navbar-collapse navHeaderCollapse">
+                               
+                                        <ul class = "nav navbar-nav navbar-right">
+                                       
+                                                <li class = "active"><a href = "#">Inicio</a></li>
+                                                <li><a href = "#">Cursos</a></li>
+                                                <li class = "dropdown">
+                                                       
+                                                        <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown">Grupos <b class = "caret"></b></a>
+                                                        <ul class = "dropdown-menu">
+                                                                <li><a href = "#">4 A</a></li>
+                                                                <li><a href = "#">6 A</a></li>
+                                                                <li><a href = "#">10 A</a></li>
+                                                                <li><a href = "#">10 B</a></li>
+                                                        </ul>
+                                               
+                                                </li>
+                                                <li><a href = "#">Cursos</a></li>
+                                                <li><a href = "#">Asistencia</a></li>
+                                       
+                                        </ul>
+                               
+                                </div>
+                               
+                        </div>
+                </div>
+      <table class="table table-hover">
+        <thead> 
+          <tr>
+            <th>
+              Nombre de la materia
+            </th>
+            <th>
+             Descripcion
+            </th>
+            <th>
+              Opciones
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @subjects.each do |subject| %>
+            <tr>
+              <td>
+                <%= subject.name %>
+              </td>
+              <td>
+                <%= subject.description %>
+              </td>
+              <td>
+                <%= link_to 'Detalles', subject , :class => 'btn btn-info' %>
+              </td>
+              <td>
+                  <%= link_to 'Editar', edit_subject_path(subject), :class => 'btn btn-info', :id => "editar-btn" %>
 
-<br>
 
-<%= link_to 'New Subject', new_subject_path %>
-<%= link_to 'Sign out', destroy_user_session_path(), method: :delete %>
+<a href=''></a>
+              </td>
+              <td>
+                <%= link_to 'Eliminar', subject, :class => 'btn btn-info', method: :delete, data: { confirm: 'Esta seguro?' }  %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      <div class="colspan20" align="center">
+         <ul class="pagination">
+          <li>
+            <a href="#">Anterior</a>
+          </li>
+          <li>
+            <a href="#">1</a>
+          </li>
+          <li>
+            <a href="#">2</a>
+          </li>
+          <li>
+            <a href="#">3</a>
+          </li>
+          <li>
+            <a href="#">4</a>
+          </li>
+          <li>
+            <a href="#">5</a>
+          </li>
+          <li>
+            <a href="#">Siguiente</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="colspan14">
+     
+        <%= link_to 'Agregar materia', new_subject_path, :class => 'btn btn-success' %>
+        <%= link_to 'Cerrar sesion', destroy_user_session_path(), method: :delete, :class => 'btn btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>
+
