@@ -1,6 +1,25 @@
-<h1>Editing subject</h1>
+   
+<div class="col-md-12 column">
+	<a id="modal-316790" href="#modal-container-316790" role="button" class="btn" data-toggle="modal">Editar Materia
+	</a>
 
-<%= render 'form' %>
+	<div class="modal fade" id="modal-container-316790" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				Editando Materia
+				</div>
+					<div class="modal-body">
+					<%= render 'subjects/form' %>
+					</div>
+				<div class="modal-footer">
+			<%= link_to 'Mostrar', @subject ,:class => 'btn btn-info' %> 
+			<%= link_to 'Cancelar', subjects_path ,:class => 'btn btn-warning' %> 
+			</div>
+		</div>
 
-<%= link_to 'Show', @subject %> |
-<%= link_to 'Back', subjects_path %>
+		</div>
+
+	</div>
+
+</div>

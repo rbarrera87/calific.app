@@ -1,4 +1,5 @@
-<%= form_for(@subject) do |f| %>
+
+<%= simple_form_for(@subject) do |f| %>
   <% if @subject.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
@@ -11,16 +12,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-    
+  <div class="form-inputs">
+    <%= f.input :name,:required => true, :autofocus => true, :input_html => {:size => 20, :class => 'form-control'} %> <br>
+
+    <%= f.input :description,:required => true, :autofocus => true, :input_html => {:size => 20, :class => 'form-control'} %> <br>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, "Guardar", :class => 'btn btn-success' %> 
   </div>
+
 <% end %>

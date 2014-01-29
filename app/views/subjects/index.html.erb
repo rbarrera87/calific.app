@@ -61,13 +61,12 @@
                 <%= subject.description %>
               </td>
               <td>
-                <%= link_to 'Detalles', subject , :class => 'btn btn-info' %>
+                <%= link_to 'Detalles', subject , :class => 'btn btn-info', :role => 'button'%>
+                
               </td>
               <td>
                   <%= link_to 'Editar', edit_subject_path(subject), :class => 'btn btn-info', :id => "editar-btn" %>
 
-
-<a href=''></a>
               </td>
               <td>
                 <%= link_to 'Eliminar', subject, :class => 'btn btn-info', method: :delete, data: { confirm: 'Esta seguro?' }  %>
