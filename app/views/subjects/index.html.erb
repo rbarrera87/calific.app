@@ -61,7 +61,7 @@
                 <%= subject.description %>
               </td>
               <td>
-                <%= link_to 'Detalles', subject , :class => 'btn btn-info', :role => 'button'%>
+                <%= link_to 'Detalles', subject , remote: true, data: {toggle: "modal"}, :class => 'btn btn-info', :role => 'button'%>
                 
               </td>
               <td>
@@ -75,7 +75,27 @@
           <% end %>
         </tbody>
       </table>
+<div class="modal fade" id="subject-details" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      Datos de la materia
+      </div>
+        <div class="modal-body">
+        <p>
+          <strong>Name:</strong>
+        </p>
 
+        <p>
+          <strong>Description:</strong>
+        </p>
+
+        </div>
+  </div>
+
+  </div>
+
+</div>
 
       <div class="colspan20" align="center">
          <ul class="pagination">
@@ -110,5 +130,171 @@
       </div>
     </div>
   </div>
+</div> 
+<!--
+
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <form role="form">
+        
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+            <label for="">Nombre: </label>
+           <input class="form-control" type="text" />
+           </th>
+            <th>
+            <label for="">Apellido Paterno:</label>
+           <input class="form-control" type="text" />
+            </th>
+            <th>
+           <label for="">Apellido Materno:</label>
+           <input class="form-control" type="text" />
+           </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+           <label for="">Fotografia: </label>
+           <input id="" type="file" />
+            </td>
+            <td>
+            <label for="">Matricula</label>
+           <input class="form-control" type="text" />
+            </td>
+            <td>
+            <div>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Sexo
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Masculino</a></li>
+              <li><a href="#">Femenino</a></li>
+            </ul>
+            </div>       <br> <br>
+       
+            
+            </td>
+          </tr>
+          <tr class="active">
+            <td>
+              <label for="">Codigo postal</label>
+            <input class="form-control" type="number" />
+
+
+            
+            </td>
+            <td>
+              <label for="">RFC</label>
+            <input class="form-control" type="text" />
+
+
+           
+            </td>
+            <td>
+              <label for="">NSS</label>
+           <input class="form-control" type="text" />
+            </td>
+          </tr>
+          <tr class="success">
+            <td>
+              <label for="">Telefono</label>
+           <input class="form-control" type="text" />
+            </td>
+            <td>
+           <label for="">Celular</label>
+           <input class="form-control" type="text" />
+
+            <td>
+              
+
+           <label for="">Correo electronico</label>
+           <input class="form-control" type="text" />
+
+            </td>
+          </tr>
+          <tr class="warning">
+            <td>
+              
+
+           <label for="">Calle</label>
+           <input class="form-control" type="text" />
+
+            </td>
+            <td>
+              
+           <label for="">Numero exterior</label>
+           <input class="form-control" type="text" />
+
+           
+            </td>
+            <td>
+              <label for="">Numero interior</label>
+           <input class="form-control" type="text" />
+
+          
+            </td>
+          </tr>
+          <tr class="danger">
+            <td>
+              <label for="">Numero de departamento</label>
+           <input class="form-control" type="text" />
+
+           
+            </td>
+            <td>
+             <label for="">Referencias</label>
+           <input class="form-control" type="text" />
+
+           
+            </td>
+            <td>
+              <label for="">Comentarios</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Poblacion</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Estado</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Carrera</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Grado</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Situacion</label>
+           <input class="form-control" type="text" />
+
+           <label for="">Turno</label>
+           <input class="form-control" type="text" /></td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+          
+       
+           
+            
+
+
+           
+
+
+          
 </div>
+
+      
+        
+        <div class="checkbox">
+        </div> <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>  !>
 
