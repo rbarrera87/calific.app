@@ -13,6 +13,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :cp
       t.string :curp
       t.string :nss
+      t.string :rfc
       t.integer :telefono
       t.integer :celular
       t.string :correo_electronico
