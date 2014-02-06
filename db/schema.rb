@@ -11,7 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129213200) do
+ActiveRecord::Schema.define(version: 20140130232517) do
+
+  create_table "grados", force: true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "nombres", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
+    t.string   "fotografia_url"
+    t.integer  "numero_control"
+    t.string   "contrasena"
+    t.date     "fecha_nacimiento"
+    t.string   "estado_civil"
+    t.string   "sexo"
+    t.string   "cp"
+    t.string   "curp"
+    t.string   "nss"
+    t.integer  "telefono"
+    t.integer  "celular"
+    t.string   "correo_electronico"
+    t.string   "calle"
+    t.string   "numero_exterior"
+    t.string   "numero_inteior"
+    t.string   "numero_departamento"
+    t.string   "referencias"
+    t.text     "comentarios"
+    t.string   "poblacion"
+    t.string   "estado"
+    t.text     "situacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "subjects", force: true do |t|
     t.string   "name"
@@ -43,30 +85,6 @@ ActiveRecord::Schema.define(version: 20140129213200) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "roles_mask",             default: 1
-    t.string   "nombre"
-    t.string   "apellido_paterno"
-    t.string   "apellido_materno"
-    t.string   "fotografia_url"
-    t.integer  "numero_control"
-    t.string   "contrasena"
-    t.date     "fecha_nacimiento"
-    t.string   "estado_civil"
-    t.string   "sexo"
-    t.string   "cp"
-    t.string   "curp"
-    t.string   "nss"
-    t.integer  "telefono"
-    t.integer  "celular"
-    t.string   "correo_electronico"
-    t.string   "calle"
-    t.string   "numero_exterior"
-    t.string   "numero_inteior"
-    t.string   "numero_departamento"
-    t.string   "referencias"
-    t.text     "comentarios"
-    t.string   "poblacion"
-    t.string   "estado"
-    t.text     "situacion"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

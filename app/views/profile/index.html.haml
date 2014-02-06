@@ -1,0 +1,13 @@
+%h1 Hola Profile
+%ul
+	%li= @user.email
+
+= form_for @user, url: "", method: :put do |f|
+	= f.text_field :nombre, placeholder: "name" 
+	= f.text_field :apellido_paterno, placeholder: "apellido_paterno"
+	= f.submit 
+%hr
+
+	
+
+
