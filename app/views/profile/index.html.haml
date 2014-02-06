@@ -1,11 +1,50 @@
 %h1 Hola Profile
 %ul
-	%li= @user.email
+	
 
-= form_for @user, url: "", method: :put do |f|
-	= f.text_field :nombre, placeholder: "name" 
+= form_for @profile, url: "", method: :put do |f|
+	%p Nombre:
+	= f.text_field :nombre, placeholder: "nombre"
+	%p Apellido paterno:
 	= f.text_field :apellido_paterno, placeholder: "apellido_paterno"
+	%p Apellido materno:
+	= f.text_field :fotografia_url, placeholder: "fotgrafia"
+	%p numero:
+	= f.text_field :numero_control, placeholder: "N° control"
+	%p contraseña
+	= f.text_field :contrasena, placeholder: "Contraseña"
+	%p feacha de nacimiento
+	= f.text_field :fecha_nacimiento, placeholder: "Fechade nacimiento"
+	%p estado civil
+	= f.select     :estado_civil, ['Casado', 'Soltero']
+	%p sexo
+	= f.radio_button :sexo, 'Hombre'
+	= f.radio_button :sexo, 'Mujer'
+	%p Cp
+	= f.text_field :cp, placeholder: 'Cp'
+	
+	= f.text_field :curp, placeholder: 'CURP'
+	= f.text_field :rfc, placeholder: 'RFC'
+	= f.text_field :telefono, placeholder: 'telefono'
+	= f.text_field :celular, placeholder: 'celular'
+	= f.text_field :correo_electronico, placeholder: 'correo_electronico'
+	= f.text_field :calle, placeholder: 'calle'
+	= f.text_field :numero_exterior, placeholder: 'numero_exterior'
+	= f.text_field :numero_departamento, placeholder: 'numero_departamento'
+	= f.text_field :referencias, placeholder: 'referencias'
+	= f.text_field :comentarios, placeholder: 'comentarios'
+	= f.select     :poblacion, ['Pebla', 'Paris']
+	= f.select     :estado, ['Pebla', 'Paris']
+	= f.text_field :situacion, placeholder: 'situacion'
+
+
+
+	 
+
+  
 	= f.submit 
+	%input{ :type => "submit" } Finish!
+
 %hr
 
 	

@@ -2,7 +2,7 @@ class ProfileController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-  	@user = current_user
+  	 @profile = current_user.profile
   end
 
   def update
@@ -40,6 +40,7 @@ class ProfileController < ApplicationController
 		:estado_civil,
 		:sexo,
 		:cp,
+    :rfc,
 		:curp, 
 		:nss, 
 		:telefono, 
