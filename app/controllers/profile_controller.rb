@@ -29,14 +29,13 @@ class ProfileController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def subject_params
       params.require(:profile).permit(
-      	:nombre, 
+    :nombre, 
 		:apellido_paterno,
 		:apellido_materno, 
 		:fotografia_url,  
 		:numero_control, 
 		:contrasena, 
 		:fecha_nacimiento,
-		:date, 
 		:estado_civil,
 		:sexo,
 		:cp,
@@ -48,7 +47,7 @@ class ProfileController < ApplicationController
 		:correo_electronico,
 		:calle,
 		:numero_exterior,
-		:numero_inteior,
+		:numero_interior,
 		:numero_departamento,
 		:referencias,
 		:comentarios,
