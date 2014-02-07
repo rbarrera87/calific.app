@@ -24,7 +24,7 @@ class RemoveFieldsFromUsers < ActiveRecord::Migration
     remove_column :users, :poblacion, :string
     remove_column :users, :estado, :string
     remove_column :users, :situacion, :text
-    		
+    	add_column :profiles, :user_id, :integer
   end
 
 end

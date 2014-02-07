@@ -1,0 +1,13 @@
+.col-md-12.column
+  %a#modal-316790.btn{"data-toggle" => "modal", href: "#modal-container-316790", role: "button"}
+    Editar Perfil
+  #modal-container-316790.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          Editando Perfil
+        .modal-body
+          = render 'form'
+        .modal-footer
+          = link_to 'Mostrar', @profile ,:class => 'btn btn-info'
+          = link_to 'Cancelar', profile_path ,:class => 'btn btn-warning'

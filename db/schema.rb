@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140129225017) do
-=======
-ActiveRecord::Schema.define(version: 20140130232517) do
+ActiveRecord::Schema.define(version: 20140202035950) do
 
   create_table "grados", force: true do |t|
     t.string   "nombre"
@@ -23,7 +20,9 @@ ActiveRecord::Schema.define(version: 20140130232517) do
     t.datetime "updated_at"
   end
 
-  create_table "nombres", force: true do |t|
+  create_table "grupos", force: true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140130232517) do
     t.string   "cp"
     t.string   "curp"
     t.string   "nss"
+    t.string   "rfc"
     t.integer  "telefono"
     t.integer  "celular"
     t.string   "correo_electronico"
@@ -57,7 +57,13 @@ ActiveRecord::Schema.define(version: 20140130232517) do
     t.datetime "updated_at"
     t.integer  "user_id"
   end
->>>>>>> 5-Add-table-called-grados
+
+  create_table "rel_grados_grupos", force: true do |t|
+    t.integer  "grado_id"
+    t.integer  "grupo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subjects", force: true do |t|
     t.string   "name"
