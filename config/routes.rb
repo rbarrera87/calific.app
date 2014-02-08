@@ -1,7 +1,7 @@
 CalificaMe::Application.routes.draw do
   get "users/index"
+  
   resources :subjects
-
   devise_for :users
   resources :profiles
   # The priority is based upon order of creation: first created -> highest priority.
