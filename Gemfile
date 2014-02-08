@@ -58,15 +58,15 @@ group :production do
 end
 
 group :development, :integration, :test do
-	gem "factory_girl_rails", "4.3.0"
-	gem "rspec-rails", "2.14.0"
-	gem "debugger"
-	#gem "haml-rails", "0.5.2"
+gem "factory_girl_rails", "4.3.0"
+gem "rspec-rails", "2.14.0"
+gem "debugger"
+#gem "haml-rails", "0.5.2"
 end
 
 group :test do
-	gem "faker", "1.2.0"
-	gem "database_cleaner", "1.2.0"
+gem "faker", "1.2.0"
+gem "database_cleaner", "1.2.0"
 end
 
 # Use ActiveModel has_secure_password
