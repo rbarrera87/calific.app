@@ -1,0 +1,10 @@
+%head
+  %meta{charset: "utf-8"}/
+%body
+  %h3.text-center.text-success
+    Completa tu perfil
+  %link{href: "css/bootstrap.css", rel: "stylesheet", type: "text/css"}/
+  .col-md-12.column
+    %a#modal-316790.btn{"data-toggle" => "modal", href: "#modal-container-316790", role: "button"}
+      Completa tu perfil
+    = render 'form'

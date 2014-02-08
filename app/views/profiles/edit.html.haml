@@ -2,10 +2,11 @@
   %a#modal-316790.btn{"data-toggle" => "modal", href: "#modal-container-316790", role: "button"}
     Editar Perfil
   #modal-container-316790.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog"}
-    .modal-dialog
+    .modal-dialog{align: "center", style: "width: 460px ;"} 
       .modal-content
         .modal-header
-          Editando Perfil
+          %h4.panel-title.text-success.text-center
+            Editando Perfil
         .modal-body
           = render 'form'
         .modal-footer
