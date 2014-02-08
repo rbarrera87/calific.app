@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 20140202035950) do
     t.datetime "updated_at"
   end
 
-  create_table "nombres", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profiles", force: true do |t|
     t.string   "nombre"
     t.string   "apellido_paterno"
@@ -45,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140202035950) do
     t.string   "cp"
     t.string   "curp"
     t.string   "nss"
+    t.string   "rfc"
     t.integer  "telefono"
     t.integer  "celular"
     t.string   "correo_electronico"
@@ -60,7 +56,6 @@ ActiveRecord::Schema.define(version: 20140202035950) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.string   "rfc"
   end
 
   create_table "rel_grados_grupos", force: true do |t|

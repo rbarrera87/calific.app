@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :profile do
+    
     nombre "MyString"
     apellido_paterno "MyString"
     apellido_materno "MyString"
