@@ -1,0 +1,1 @@
+$('#subject-details').modal('show');

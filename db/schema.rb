@@ -55,9 +55,13 @@ ActiveRecord::Schema.define(version: 20140208014257) do
     t.text     "situacion"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.integer  "user_id",             null: false
     t.integer  "grupo_id",            null: false
     t.string   "turno"
+=======
+    t.integer  "user_id"
+>>>>>>> master
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree

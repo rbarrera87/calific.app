@@ -1,14 +1,25 @@
 require 'spec_helper'
 
-describe ProfileController do
+describe ProfilesController do
 
+<<<<<<< HEAD
+  describe "GET 'index'" do
+    it "returns http success" do
+      get 'index'
+=======
   describe "GET 'index,'" do
     it "returns http success" do
       get 'index,'
+>>>>>>> 5-Add-table-called-grados
       response.should be_success
     end
   end
 
+<<<<<<< HEAD
+  describe "GET 'show'" do
+    it "returns http success" do
+      get 'show'
+=======
   describe "GET 'update,'" do
     it "returns http success" do
       get 'update,'
@@ -33,6 +44,7 @@ describe ProfileController do
   describe "GET 'destroy,'" do
     it "returns http success" do
       get 'destroy,'
+>>>>>>> 5-Add-table-called-grados
       response.should be_success
     end
   end

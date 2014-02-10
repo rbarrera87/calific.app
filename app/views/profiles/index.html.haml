@@ -1,0 +1,29 @@
+.container
+  .row.clearfix
+    %h3.text-center.text-success
+      Bienvenido Alumno
+    .col-md-20.column
+      %table.table.table-hover
+        %thead
+          %tr
+            %th
+              Nombre de la materia
+            %th
+              Descripcion
+            %th
+              Opciones
+        %tbody
+          - @profiles.each do |profile|
+            %tr
+              %td
+                = profile.nombre
+              %td
+                = profile.apellido_paterno
+              %td
+                = link_to 'Detalles', profile , remote: true, data: {toggle: "modal"}, :class => 'btn btn-info', :role => 'button'
+              %td
+                = link_to 'Editar', edit_profile_path(profile), :class => 'btn btn-info', :id => "editar-btn"
+              %td
+                = link_to 'Eliminar', profile, :class => 'btn btn-info', method: :delete, data: { confirm: 'Esta seguro?' }
+      .colspan14
+        = link_to 'Cerrar sesion', destroy_user_session_path(), method: :delete, :class => 'btn btn-danger'
