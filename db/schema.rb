@@ -9,9 +9,11 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
-
+# It's strongly recommended that you check this file into your version control system
 ActiveRecord::Schema.define(version: 20140207192014) do
+
+ActiveRecord::Schema.define(version: 20140210170549) do
+
 
   create_table "grados", force: true do |t|
     t.string   "nombre"
@@ -33,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140207192014) do
     t.string   "apellido_materno"
     t.string   "fotografia_url"
     t.integer  "numero_control"
-    t.string   "contrasena"
     t.date     "fecha_nacimiento"
     t.string   "estado_civil"
     t.string   "sexo"
@@ -43,7 +44,6 @@ ActiveRecord::Schema.define(version: 20140207192014) do
     t.string   "rfc"
     t.integer  "telefono"
     t.integer  "celular"
-    t.string   "correo_electronico"
     t.string   "calle"
     t.string   "numero_exterior"
     t.string   "numero_interior"
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 20140207192014) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",             null: false
+    t.integer  "grupo_id",            null: false
+    t.string   "turno"
+
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
@@ -68,6 +71,21 @@ ActiveRecord::Schema.define(version: 20140207192014) do
   end
 
   add_index "rel_grados_grupos", ["grado_id", "grupo_id"], name: "index_rel_grados_grupos_on_grado_id_and_grupo_id", unique: true, using: :btree
+
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
+  add_index "rel_grados_grupos", ["grado_id", "grupo_id"], name: "index_rel_grados_grupos_on_grado_id_and_grupo_id", unique: true, using: :btree
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
 
   create_table "subjects", force: true do |t|
     t.string   "name"
@@ -99,9 +117,40 @@ ActiveRecord::Schema.define(version: 20140207192014) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "roles_mask",             default: 1
+    t.string   "nombre"
+    t.string   "apellido_paterno"
+    t.string   "apellido_materno"
+    t.string   "fotografia_url"
+    t.integer  "numero_control"
+    t.string   "contrasena"
+    t.date     "fecha_nacimiento"
+    t.string   "estado_civil"
+    t.string   "sexo"
+    t.string   "cp"
+    t.string   "curp"
+    t.string   "nss"
+    t.integer  "telefono"
+    t.integer  "celular"
+    t.string   "correo_electronico"
+    t.string   "calle"
+    t.string   "numero_exterior"
+    t.string   "numero_inteior"
+    t.string   "numero_departamento"
+    t.string   "referencias"
+    t.text     "comentarios"
+    t.string   "poblacion"
+    t.string   "estado"
+    t.text     "situacion"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_roles", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
 end

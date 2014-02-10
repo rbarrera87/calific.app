@@ -1,6 +1,6 @@
-class AddFieldsToUsers < ActiveRecord::Migration
+class AddFieldsTousers < ActiveRecord::Migration
   def change
-    add_column :users, :nombre, :string
+  	add_column :users, :nombre, :string
     add_column :users, :apellido_paterno, :string
     add_column :users, :apellido_materno, :string
     add_column :users, :fotografia_url, :string
