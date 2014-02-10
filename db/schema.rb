@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+ActiveRecord::Schema.define(version: 20140208014257) do
+
 ActiveRecord::Schema.define(version: 20140210170549) do
+
 
   create_table "grados", force: true do |t|
     t.string   "nombre"
@@ -56,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140210170549) do
     t.integer  "user_id",             null: false
     t.integer  "grupo_id",            null: false
     t.string   "turno"
+
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
@@ -63,8 +68,7 @@ ActiveRecord::Schema.define(version: 20140210170549) do
   create_table "rel_grados_grupos", force: true do |t|
     t.integer  "grado_id",   null: false
     t.integer  "grupo_id",   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+
   end
 
   add_index "rel_grados_grupos", ["grado_id", "grupo_id"], name: "index_rel_grados_grupos_on_grado_id_and_grupo_id", unique: true, using: :btree
@@ -73,12 +77,15 @@ ActiveRecord::Schema.define(version: 20140210170549) do
     t.string   "name"
     t.integer  "resource_id"
     t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+
   end
+
+
+  add_index "rel_grados_grupos", ["grado_id", "grupo_id"], name: "index_rel_grados_grupos_on_grado_id_and_grupo_id", unique: true, using: :btree
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
 
   create_table "subjects", force: true do |t|
     t.string   "name"
