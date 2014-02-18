@@ -1,4 +1,11 @@
 class Profile < ActiveRecord::Base
+  after_create :create_profile
+  private
+    def create_profile
+      profile = user.build_profile
+      profile.grupo_id = 1
+      profile.save(validate: false)  
+    end
   belongs_to :user
   has_one :carrera
   validates :nombre, presence: true
@@ -17,7 +24,5 @@ class Profile < ActiveRecord::Base
   validates :calle, presence: true
   validates :poblacion, presence: true
   validates :estado, presence: true
-  validates :situacion, presence: true
-		
-		
+  validates :situacion, presence: true	
 end
