@@ -6,6 +6,7 @@ class Profile < ActiveRecord::Base
       profile.grupo_id = 1
       profile.save(validate: false)  
     end
+    
   belongs_to :user
   has_one :carrera
   validates :nombre, presence: true
