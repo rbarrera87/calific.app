@@ -1,5 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
+  has_one :carrera
   validates :nombre, presence: true
   validates :apellido_paterno, presence: true
   validates :apellido_materno, presence: true
