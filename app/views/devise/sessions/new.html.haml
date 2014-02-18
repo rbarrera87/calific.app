@@ -1,0 +1,16 @@
+.container
+  .row.clearfix
+    .col-md-12.column
+      .form-group
+        %h3.text-center.text-success
+          Inicia Sesion
+        = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+          .form-inputs
+            = f.input :email,:required => true, :autofocus => true, :input_html => {:size => 20, :class => 'form-control'}
+            %br/
+            = f.input :password, :required => true, :input_html => {:size => 20, :class => 'form-control'}
+            %br/
+            = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+            %br/
+          = f.button :submit, "Aceptar", :class => 'btn btn-success'
+          = render "devise/shared/links"
