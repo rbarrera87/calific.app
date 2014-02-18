@@ -5,7 +5,6 @@ class Profile < ActiveRecord::Base
   validates :apellido_materno, presence: true
   validates :fotografia_url, presence: true
   validates :numero_control, presence: true
-  validates :contrasena, confirmation: true
   validates :fecha_nacimiento, presence: true
   validates :estado_civil, presence: true
   validates :sexo, presence: true
