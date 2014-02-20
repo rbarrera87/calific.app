@@ -1,0 +1,75 @@
+.container
+	.row.clearfix
+		%h3.text-center.text-success
+			Lista de carreras
+		.col-md-20.column
+			.navbar.navbar-inverse.navbar-static-top
+				.container
+					%a.navbar-brand{href: "#"} Carreras
+					.collapse.navbar-collapse.navHeaderCollapse
+						%ul.nav.navbar-nav.navbar-right
+							%li.active
+								%a{href: "#"} Inicio
+							%li
+								%a{href: "#"} Cursos
+							%li.dropdown
+								%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+									Grupos
+									%b.caret
+								%ul.dropdown-menu
+									%li
+										%a{href: "#"} 4 A
+									%li
+										%a{href: "#"} 6 A
+									%li
+										%a{href: "#"} 10 A
+									%li
+										%a{href: "#"} 10 B
+							%li
+								%a{href: "#"} Cursos
+							%li
+								%a{href: "#"} Asistencia
+								
+			%table.table.table-hover
+				%thead
+					%tr
+						%th
+							Nombre de la carrera
+						%th
+							Descripción
+						%th
+							Opciones
+				%tbody
+					- @carreras.each do |carrera|
+						%tr
+							%td
+								= carrera.nombre
+							%td
+								= carrera.descripcion
+							%td
+								= link_to 'Detalles', carrera , :class => 'btn btn-info', :role => 'button'
+							%td
+								= link_to 'Editar', edit_carrera_path(carrera), :class => 'btn btn-info', :id => "editar-btn"
+							%td
+								= link_to 'Eliminar', carrera, :class => 'btn btn-info', method: :delete, data: { confirm: 'Esta seguro?' }
+					
+
+			.colspan20{align: "center"}
+				%ul.pagination
+					%li
+						%a{href: "#"} Anterior
+					%li
+						%a{href: "#"} 1
+					%li
+						%a{href: "#"} 2
+					%li
+						%a{href: "#"} 3
+					%li
+						%a{href: "#"} 4
+					%li
+						%a{href: "#"} 5
+					%li
+						%a{href: "#"} Siguiente
+			.colspan14
+				= link_to 'Agregar materia', new_carrera_path, :class => 'btn btn-success'
+				= link_to 'Cerrar sesión', destroy_user_session_path(), method: :delete, :class => 'btn btn-danger'

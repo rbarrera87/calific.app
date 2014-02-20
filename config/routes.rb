@@ -1,9 +1,11 @@
 CalificaMe::Application.routes.draw do
-  get "users/index"
+
   
-  resources :subjects
+  
   devise_for :users
+  resources :subjects
   resources :profiles
+  resources :carreras
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

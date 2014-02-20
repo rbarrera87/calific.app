@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140211015433) do
     t.integer  "carrera_id"
   end
 
+  add_index "profiles", ["grupo_id"], name: "index_profiles_on_grupo_id", unique: true, using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
 
   create_table "rel_grados_grupos", force: true do |t|
