@@ -1,4 +1,7 @@
 CalificaMe::Application.routes.draw do
+  get "encuestas/index"
+  get "encuestas/create"
+  get "encuestas/show"
   get "users/index"
   
   resources :subjects
