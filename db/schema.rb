@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211015433) do
+ActiveRecord::Schema.define(version: 20140219235948) do
 
   create_table "carreras", force: true do |t|
     t.string   "nombre"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20140211015433) do
   end
 
   add_index "carreras", ["nombre_id"], name: "index_carreras_on_nombre_id", unique: true, using: :btree
+
+  create_table "encuestas", force: true do |t|
+    t.string   "pregunta"
+    t.string   "respuesta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "grados", force: true do |t|
     t.string   "nombre"
@@ -67,8 +74,11 @@ ActiveRecord::Schema.define(version: 20140211015433) do
     t.integer  "grupo_id",            null: false
     t.string   "turno"
     t.integer  "carrera_id"
+    t.integer  "grado_id",            null: false
   end
 
+  add_index "profiles", ["grado_id"], name: "index_profiles_on_grado_id", unique: true, using: :btree
+  add_index "profiles", ["grupo_id"], name: "index_profiles_on_grupo_id", unique: true, using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
 
   create_table "rel_grados_grupos", force: true do |t|
