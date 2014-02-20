@@ -1,13 +1,19 @@
 .col-md-12.column
   %a#modal-316790.btn{"data-toggle" => "modal", href: "#modal-container-316790", role: "button"}
-    Editar Materia
+    Detalles
   #modal-container-316790.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog"}
     .modal-dialog{style: "width:350px; height:40px; text-align:left; font-size:14px; font-family: Arial;"}
       .modal-content
         .modal-header
           %h4.panel-title.text-success.text-center
-            Editando Materia
+            Datos de la materia
         .modal-body
-          = render 'form'
+          %p
+            %strong Nombre:
+            = @subject.name
+          %p
+            %strong Descripción:
+            = @subject.description
         .modal-footer
+          = link_to 'Editar', edit_subject_path(@subject), :class => 'btn btn-info', :id => "editar-btn"
           = link_to 'Cancelar', subjects_path ,:class => 'btn btn-warning'

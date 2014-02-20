@@ -1,0 +1,17 @@
+= simple_form_for(@subject) do |f|
+  - if @subject.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@subject.errors.count, "error")
+        prohibited this subject from being saved:
+      %ul
+        - @subject.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-inputs
+    = f.input :name, :label => 'Nombre:', :autofocus => true, :input_html => {:size => 20, :class => 'form-control'}
+    %br/
+    = f.input :description, :label => 'Descripción',:autofocus => true, :input_html => {:size => 20, :class => 'form-control'}
+    %br/
+  .actions
+    = f.button :submit, "Guardar", :class => 'btn btn-success'
